@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TedsGymFinalProject.Model
+namespace TedsGymFinalProject.Model;
+
+public class Member
 {
-    internal class Member
-    {
-    }
+
 }
