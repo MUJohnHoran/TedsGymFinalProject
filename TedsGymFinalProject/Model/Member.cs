@@ -13,14 +13,16 @@ namespace TedsGymFinalProject.Model;
     public string PhoneNumber { get; set; }
     public string Address { get; set; }
     public bool ActiveOrInactive { get; set; }
+    public Membership Membership { get; set; }
 
-    public Member (string memberFirtName, string memberLastName, string phoneNumber, string address, bool activeOrInactive)
+    public Member (string memberFirtName, string memberLastName, string phoneNumber, string address, Membership membership))
     {
         this.MemberFirstName = memberFirtName;
         this.MemberLastName = memberLastName;
         this.PhoneNumber = phoneNumber;
         this.Address = address;
         this.ActiveOrInactive = activeOrInactive;
+        this.Membership = membership;
     }
     
    
