@@ -8,25 +8,23 @@ using System.Threading.Tasks;
 namespace TedsGymFinalProject.Model;
  public class Member
 {
-
+    public int ID {get; set}
+    public string Password {get; set}
+    public string Username {get; set;}
+    public static int IDGenerator;
     public string MemberFirstName { get; set; }
     public string MemberLastName { get; set; }
     public string PhoneNumber { get; set; }
-    public string Address { get; set; }
     public bool ActiveOrInactive { get; set; }
     public Membership Membership { get; set; }
 
 
     public Membership Membership { get; set; }
 
-    public Member(string memberFirtName, string memberLastName, string phoneNumber, string address, bool activeOrInactive, Membership members
+    public Member()
     {
-        this.MemberFirstName = memberFirtName;
-        this.MemberLastName = memberLastName;
-        this.PhoneNumber = phoneNumber;
-        this.Address = address;
-        this.ActiveOrInactive = activeOrInactive;
-        this.Membership = membership;
+       IDGenerator ++;
+       ID = IDGenerator;
     }
 }
     
