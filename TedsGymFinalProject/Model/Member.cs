@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,7 +16,10 @@ namespace TedsGymFinalProject.Model;
     public bool ActiveOrInactive { get; set; }
     public Membership Membership { get; set; }
 
-    public Member (string memberFirtName, string memberLastName, string phoneNumber, string address, Membership membership))
+
+    public Membership Membership { get; set; }
+
+    public Member(string memberFirtName, string memberLastName, string phoneNumber, string address, bool activeOrInactive, Membership members
     {
         this.MemberFirstName = memberFirtName;
         this.MemberLastName = memberLastName;
@@ -24,9 +28,10 @@ namespace TedsGymFinalProject.Model;
         this.ActiveOrInactive = activeOrInactive;
         this.Membership = membership;
     }
+}
     
    
-
+    
    
 
 

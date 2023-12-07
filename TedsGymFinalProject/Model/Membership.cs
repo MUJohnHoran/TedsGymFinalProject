@@ -9,18 +9,18 @@ namespace TedsGymFinalProject.Model;
 public class Membership
 {
 
- public int MembershipLvl { get; set; }
+    public int MembershipLvl { get; set; }
 
- public string MembershipName { get; set; }
- public double Cost { get; set; }
+    public string MembershipName { get; set; }
+    public double Cost { get; set; }
 
- 
- public Membership (int membershipLvl, string membershipName, double cost)
- {
-     this.MembershipLvl = membershipLvl;
-     this.MembershipName = membershipName;
-     this.Cost = cost;
- }
+    
+    public Membership (int membershipLvl, string membershipName, double cost)
+    {
+        this.MembershipLvl = membershipLvl;
+        this.MembershipName = membershipName;
+        this.Cost = cost;
+    }
 
 
 }
