@@ -8,6 +8,7 @@ namespace TedsGymFinalProject.Model;
 
 public class Membership
 {
+
     public int MembershipLvl { get; set; }
 
     public string MembershipName { get; set; }
@@ -20,6 +21,7 @@ public class Membership
         this.MembershipName = membershipName;
         this.Cost = cost;
     }
+
 
 
     Membership Premium = new Membership(3, "Premium", 100.00);
