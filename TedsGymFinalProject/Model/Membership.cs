@@ -22,6 +22,9 @@ public class Membership
     }
 
 
+    Membership Premium = new Membership(3, "Premium", 100.00);
+    Membership Plus = new Membership(2, "Plus", 75.00);
+    Membership Basic = new Membership(1, "Basic", 50.00);
 
 
 
