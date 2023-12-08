@@ -14,5 +14,5 @@ namespace TedsGymFinalProject.Model
         {
             members = new List<Member>();
         }
-       
+    }
 }
