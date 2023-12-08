@@ -14,9 +14,5 @@ namespace TedsGymFinalProject.Model
         {
             members = new List<Member>();
         }
-        public Member Authenticate(string username, string password)
-        {
-            var a = Members.Where(c => (c.Username == username) && (c.Password == password)
-        } 
-    }
+       
 }
