@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TedsGymFinalProject.Model;
- public class Member
+public class Member
 {
     public int ID { get; set; }
     public string Password { get; set; }
@@ -17,6 +17,8 @@ namespace TedsGymFinalProject.Model;
     public string PhoneNumber { get; set; }
     public bool ActiveOrInactive { get; set; }
     public Membership Membership { get; set; }
+
+
 
     
 
@@ -34,4 +36,4 @@ namespace TedsGymFinalProject.Model;
 
 
 
-}
+
