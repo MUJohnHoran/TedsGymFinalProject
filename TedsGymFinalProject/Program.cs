@@ -151,7 +151,7 @@ public class Program
 
 
             }
-            MembershipLvl selectedMembershipLvl = (MembershipLvl)selectedPlan;
+            Membership selectedMembershipLvl = Membership.selectedPlan;
 
             Console.Write($"You have selected the {selectedMembershipLvl} membership plan.");
         }
@@ -218,7 +218,7 @@ public class Program
             static void ViewAppointments()
             {
 
-                 var appointmentList = MemberAppointment.Where(o => o.member.Username == authenticatedMember.Username);
+                 var appointmentList = memberAppointment.Where(o => o.member.Username == authenticatedMember.Username);
 
                 if(appointmentList.Count() == 0)
                 {
