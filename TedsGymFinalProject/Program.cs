@@ -148,7 +148,6 @@ public class Program
             Console.Write($"You have selected the {selectedMembershipLvl} membership plan.");
         }
     }    
-}
 
 
 
@@ -166,7 +165,7 @@ public class Program
             switch (Option)
             {
                 case "1":
-                    AppointmentSignUp();
+                    ScheduleAppointment();
                     break;
                 case "2":
                     CheckBalance();
@@ -211,7 +210,7 @@ public class Program
             static void ViewAppointments()
             {
 
-                 var appointmentList = memberAppointments.Where(o => o.customer.Username == authenticatedMember.Username);
+                 var appointmentList = memberAppointments.Where(o => o.member.Username == authenticatedMember.Username);
 
                 if(appointmentList.Count() == 0)
                 {
@@ -228,5 +227,4 @@ public class Program
 
         }
     }
-}
 }
