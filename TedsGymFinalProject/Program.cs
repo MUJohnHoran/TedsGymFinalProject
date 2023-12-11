@@ -168,7 +168,17 @@ public class Program
             }
             static void ViewAppointments()
             {
-
+                 var appointmentList = customerAppointments.Where(o => o.customer.Username == authenticatedCustomer.Username);
+                if(appointmentList.Count() == 0)
+                {
+                    Console.WriteLine("No appointment found.");
+                }
+                else
+                {
+                    foreach(var appointment in appointmentList)
+                    {
+                        Console.WriteLine(appointment.appointment.date);
+                    }
             }
             
 
