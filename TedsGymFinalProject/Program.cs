@@ -4,7 +4,7 @@ using System.Numerics;
 using System.Security.Cryptography;
 using TedsGymFinalProject.Model;
 
-namespace TedsGymFinalProject.model;
+namespace TedsGymFinalProject.Model;
 
 public class Program
 {
@@ -22,7 +22,7 @@ public class Program
 
     static void Begin()
     {
-        var a1 = new Member()
+        var a1 = new Member
         {
             Password = "4321",
             Username = "Ted4321",
@@ -31,6 +31,9 @@ public class Program
             PhoneNumber = "642-245-8989",
             ActiveOrInactive = true
         };
+
+        members = new Members();
+        members.members.Add(a1);
 
 
         Membership Premium = new Membership(3, "Premium", 100.00);
