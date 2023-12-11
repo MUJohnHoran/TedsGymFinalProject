@@ -32,7 +32,7 @@ public class Program
             PhoneNumber = "642-245-8989",
             ActiveOrInactive = true
         };
-
+        
         members = new Members();
         members.members.Add(a1);
 
@@ -112,7 +112,7 @@ public class Program
                     Username = username,
                     Password = password,
                     PhoneNumber = phoneNumber,
-                };
+                };               
             }
 
             static void MembershipPlan()
@@ -142,7 +142,7 @@ public class Program
 
             membershipLvl selectedMembershipLvl = (membershipLvl)selectedPlan;
             Console.Write($"You have selected the {selectedMembershipLvl} membership plan.");
-            }
+}
 
 
 
@@ -201,4 +201,5 @@ public class Program
 
         }
     }
+}
 }
