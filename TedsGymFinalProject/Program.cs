@@ -36,7 +36,7 @@ public class Program
         Membership Plus = new Membership(2, "Plus", 75.00);
         Membership Basic = new Membership(1, "Basic", 50.00);
 
-        
+
     }
 
 
@@ -65,7 +65,13 @@ public class Program
             }
             static void LoginMenu()
             {
-
+                if (authenticatedMember == null)
+                {
+                    Console.Write("Enter your username: ");
+                    string username = Console.ReadLine();
+                    Console.Write("Enter your password");
+                    string password = Console.ReadLine();
+                }
             }
 
             static void SignUpMenu()
@@ -94,6 +100,51 @@ public class Program
                 Console.WriteLine("Choose a Membership Level:");
                 Console.WriteLine($"Basic (1), Plus (2), Premium (3)");
             }
+
+
+
+        }
+    }
+    static void LoggedIn()
+    {
+        bool over = false;
+
+        while (!over)
+        {
+            Console.WriteLine("For: Appointment Sign Up (1), To Check Balance (2), View Current Appointments (3), To Quit (Q)");
+            Console.Write("Option:");
+            String Option = Console.ReadLine();
+            switch (Option)
+            {
+                case "1":
+                    AppointmentSignUp();
+                    break;
+                case "2":
+                    CheckBalance();
+                    break;
+                case "3":
+                    ViewAppoinments();
+                    break;
+
+                case "q":
+                    over = true;
+                    Console.WriteLine("Thank you for your time!");
+                    break;
+
+            }
+            static void AppointmentSignUp()
+            {
+
+            }
+            static void CheckBalance()
+            {
+
+            }
+            static void ViewAppointments()
+            {
+
+            }
+            
 
         }
     }
