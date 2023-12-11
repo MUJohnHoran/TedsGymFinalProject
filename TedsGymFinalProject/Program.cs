@@ -170,14 +170,33 @@ public class Program
                     break;
 
             }
-            static void AppointmentSignUp()
+            static void ScheduleAppointment()
             {
+                Console.WriteLine("Available activities: Yoga, Swim, Cycling, Weight Training, Basketball, and Tennis.");
+
+                Console.Write("Please enter the type of activity:");
+                string activityType = Console.ReadLine();
+
+                Console.Write("Enter the day of the week:");
+                string dayofWeek = Console.ReadLine();
+
+                Console.WriteLine("Enter what time:");
+                string time = Console.ReadLine();
+
+                Scheduling yourSchedule = new Scheduling(activityType, dayofWeek, time);
+
+                Console.WriteLine("/nSign-up Details:");
+                Console.WriteLine("Class type: " + yourSchedule.ActivityType);
+                Console.WriteLine("Day of the week: " + yourSchedule.DayOfWeek);
+                Console.WriteLine("Time: " + yourSchedule.Time);
 
             }
+            
             static void CheckBalance()
             {
 
             }
+            
             static void ViewAppointments()
             {
                  var appointmentList = customerAppointments.Where(o => o.customer.Username == authenticatedCustomer.Username);
