@@ -212,25 +212,71 @@ public class Program
             
             static void CheckBalance()
             {
+            Balance userBalance = new Balance()
+            {
+                TotalBalance = 100.0,
+                LateFees = 10.0,
+                Rewards = 5.0,
+                Vending = 20.0
+            };
 
+            bool exit = false;
+
+            while (!exit)
+            {
+                Console.WriteLine("Welcome! Please choose an option.");
+                Console.WriteLine("1. Check Total Balance");
+                Console.WriteLine("2. Check late fees")
+                Console.WriteLine("3. Check rewards")
+                Console.WriteLine("4. Check vending credits")
+                Console.WriteLine("5. Exit");
+
+                Console.WriteLine("Enter your choice:");
+                string input = Console.ReadLine();
+
+                switch (input)
+                {
+                    case "1":
+                        Console.WriteLine($"Your total balance is: {userBalance.TotalBalance:C}");
+                        break;
+                    case "2":
+                        Console.WriteLine($"You have {userBalance.LateFees:C} in late fees.")
+                        break;
+                    case "3":
+                        Console.WriteLine($"You have {userBalance.Rewards:C} in rewards.");
+                        break;
+                    case "4":
+                        Console.WriteLine($"You have {userBalance.Vending:C} in vending credits.");
+                        break;
+                    case "5":
+                        Console.WriteLine("Exiting...");
+                        break;
+                    default:
+                        Console.WriteLine("Invalid option. Please enter either 1 or 2.");
+                        break;
+                }
+                Console.WriteLine();
             }
-            
-            static void ViewAppointments()
+
+        }
+
+        static void ViewAppointments()
             {
 
                  var appointmentList = memberAppointment.Where(o => o.member.Username == authenticatedMember.Username);
 
-                if(appointmentList.Count() == 0)
-                {
-                    Console.WriteLine("No appointment found.");
-                }
-                else
-                {
-                    foreach(var appointment in appointmentList)
-                    {
-                        Console.WriteLine(appointment.appointment.date);
-                    }
+            if (appointmentList.Count() == 0)
+            {
+                Console.WriteLine("No appointment found.");
             }
+            else
+            {
+                foreach (var appointment in appointmentList)
+                {
+                    Console.WriteLine(appointment.appointment.date);
+                }
+            }
+            
             
 
         }
