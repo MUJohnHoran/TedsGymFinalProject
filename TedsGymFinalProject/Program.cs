@@ -144,8 +144,10 @@ public class Program
                 Console.WriteLine("3. Premium. Cost = $100.00");
                 Console.WriteLine("4. Exit");
 
+
                 Console.WriteLine("Please make a selection:");
                 string input = Console.ReadLine();
+
 
                 switch (input)
                 {
@@ -237,9 +239,11 @@ public class Program
             {
                 Console.WriteLine("Welcome! Please choose an option.");
                 Console.WriteLine("1. Check Total Balance");
+
                 Console.WriteLine("2. Check late fees")
                 Console.WriteLine("3. Check rewards")
                 Console.WriteLine("4. Check vending credits")
+
                 Console.WriteLine("5. Exit");
 
                 Console.WriteLine("Enter your choice:");
@@ -274,7 +278,8 @@ public class Program
         static void ViewAppointments()
             {
 
-                 var appointmentList = MemberAppointment.Where(o => o.member.Username == authenticatedMember.Username);
+                 var appointmentList = memberAppointment.Where(o => o.member.Username == authenticatedMember.Username);
+
 
             if (appointmentList.Count() == 0)
             {
