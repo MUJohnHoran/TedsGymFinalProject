@@ -95,11 +95,37 @@ public class Program
                     Username = username,
                     Password = password,
                     PhoneNumber = phoneNumber,
-                };
-
-                Console.WriteLine("Choose a Membership Level:");
-                Console.WriteLine($"Basic (1), Plus (2), Premium (3)");
+                };               
             }
+
+            static void MembershipPlan()
+            {
+                int selectedPlan = 0;
+
+                while (selectedPlan < 1 || selectedPlan > 3)
+                {
+                    Console.WriteLine("Select a membership plan:");
+                    Console.WriteLine("1. Basic - $50.00");
+                    Console.WriteLine("2. Plus - $75.00");
+                    Console.WriteLine("3. Premium - $100.00");
+                    Console.WriteLine("Please select a plan by entering a number (1-3)");
+
+                        if (int.TryParse(Console.ReadLine(), out selectedPlan))
+                        {
+                            if(selectedPlan < 1 || selectedPlan > 3)
+                            {
+                                Console.WriteLine("Invalid input! Please enter a number from 1-3.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Invalid input! Please enter a valid number.");
+            }
+        }
+    }
+
+            MembershipLvl selectedMembershipLvl = (MembershipLvl)selectedPlan;
+            Console.Write($"You have selected the {selectedMembershipLvl} membership plan.");
+}
 
 
 
