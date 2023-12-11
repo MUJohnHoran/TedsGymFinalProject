@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.Design;
+using System.ComponentModel.Design;
 using System.Net;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -130,6 +130,7 @@ public class Program
 
                 if (int.TryParse(Console.ReadLine(), out selectedPlan))
                 {
+
                     if (selectedPlan < 1 || selectedPlan > 3)
                     {
                         Console.WriteLine("Invalid input! Please enter a number from 1-3.");
@@ -209,7 +210,9 @@ public class Program
             
             static void ViewAppointments()
             {
+
                  var appointmentList = memberAppointments.Where(o => o.customer.Username == authenticatedMember.Username);
+
                 if(appointmentList.Count() == 0)
                 {
                     Console.WriteLine("No appointment found.");

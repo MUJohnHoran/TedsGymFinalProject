@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
@@ -15,8 +15,6 @@ namespace TedsGymFinalProject.Model
         {
             members = new List<Member>();
 
-        }
-
         public Member Authenticate(string username, string password)
         {
             var c = members.Where(o => (o.Username == username) && (o.Password == password));
@@ -30,5 +28,5 @@ namespace TedsGymFinalProject.Model
                 return null;
             }
         }
-    }
-    }
+
+ }
