@@ -11,8 +11,8 @@ public class Program
     private static Members members;
     private static Member member;
     private static Member authenticatedMember;
-    private static List<Scheduling> appointments;
-    private static List<MemberAppointment> customerAppointments;
+    private static List<Appointment> appointment;
+    private static List<MemberAppointment> memberAppointment;
     static void Main(string[] args)
     {
         Console.WriteLine("Loading...");
@@ -32,11 +32,19 @@ public class Program
             PhoneNumber = "642-245-8989",
             ActiveOrInactive = true
         };
-        
+        var c1 = new Appointment();
+
+
+        var ca1 = new MemberAppointment(a1, c1);
+
         members = new Members();
         members.members.Add(a1);
 
-        appointments = new List<Appointment>();
+        memberAppointment = new List<MemberAppointment>();
+        memberAppointment.Add(ca1);
+
+        appointment = new List<Appointment>();
+        appointment.Add(c1);
 
         Membership Premium = new Membership(3, "Premium", 100.00);
         Membership Plus = new Membership(2, "Plus", 75.00);
@@ -148,7 +156,6 @@ public class Program
             Console.Write($"You have selected the {selectedMembershipLvl} membership plan.");
         }
     }    
-}
 
 
 
@@ -166,7 +173,7 @@ public class Program
             switch (Option)
             {
                 case "1":
-                    AppointmentSignUp();
+                    ScheduleAppointment();
                     break;
                 case "2":
                     CheckBalance();
@@ -256,7 +263,7 @@ public class Program
         static void ViewAppointments()
             {
 
-                 var appointmentList = memberAppointments.Where(o => o.customer.Username == authenticatedMember.Username);
+                 var appointmentList = MemberAppointment.Where(o => o.member.Username == authenticatedMember.Username);
 
             if (appointmentList.Count() == 0)
             {
@@ -274,5 +281,4 @@ public class Program
 
         }
     }
-}
 }
