@@ -10,6 +10,7 @@ public class Program
 {
     private static Members members;
     private static Member member;
+    private static Member authenticatedMember;
 
     static void Main(string[] args)
     {
@@ -65,12 +66,23 @@ public class Program
             }
             static void LoginMenu()
             {
+
                 if (authenticatedMember == null)
                 {
                     Console.Write("Enter your username: ");
                     string username = Console.ReadLine();
                     Console.Write("Enter your password");
                     string password = Console.ReadLine();
+                    authenticatedMember = members.Authenticate(username, password);
+                    if (authenticatedMember != null)
+                    {
+                        Console.WriteLine($"Welcome {authenticatedMember.MemberFirstName}");
+                        LoggedIn();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Invalid username or password");
+                    }
                 }
             }
 
@@ -149,7 +161,7 @@ public class Program
                     CheckBalance();
                     break;
                 case "3":
-                    ViewAppoinments();
+                    ViewAppointments();
                     break;
 
                 case "q":

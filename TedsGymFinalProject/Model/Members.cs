@@ -14,19 +14,19 @@ namespace TedsGymFinalProject.Model
         {
             members = new List<Member>();
         }
+      
+    public Member Authenticate(string username, string password)
+    {
+            var c = members.Where(o => (o.Username == username) && (o.Password == password));
 
-        public Member Authenticate(string username, string password)
+        if (c.Count() > 0)
         {
-            var c = members.Where(o=> (o.username  == username) && (o.password == password));
-
-            if(c.Count() > 0)
-            {
-                 return c.First();
-            }
-            else
-            {
-                 return null;
-            }
-
+            return c.First();
         }
+        else
+        {
+            return null;
+        }
+    }
+
 }
