@@ -1,4 +1,4 @@
-﻿using System.ComponentModel.Design;
+using System.ComponentModel.Design;
 using System.Net;
 using System.Numerics;
 using System.Security.Cryptography;
