@@ -122,57 +122,54 @@ public class Program
                 Password = password,
                 PhoneNumber = phoneNumber,
             };
-        }
 
-        static void MembershipPlan()
-        {
-            Membership userMembership = new Membership()
+            static void MembershipPlan()
             {
-                MembershipLvl = 2,
-                MembershipName = Plus,
-                Cost = 75.00
-            }
+                Membership userMembership = new Membership()
+                {
+                    MembershipLvl = 2,
+                    MembershipName = Plus,
+                    Cost = 75.00
+                }
 
 
             bool exit = false;
 
-            while (!exit)
-            {
-                Console.WriteLine("Welcome! Please select a plan.");
-                Console.WriteLine("1. Basic. Cost = $50.00");
-                Console.WriteLine("2. Plus. Cost = $75.00");
-                Console.WriteLine("3. Premium. Cost = $100.00");
-                Console.WriteLine("4. Exit");
-
-
-                Console.WriteLine("Please make a selection:");
-                string input = Console.ReadLine();
-
-
-                switch (input)
+                while (!exit)
                 {
-                    case "1":
-                        Console.WriteLine("You have selected Basic.");
-                        break;
-                    case "2":
-                        Console.WriteLine("You have selected Plus.");
-                        break;
-                    case "3"
-                        Console.WriteLine("You have selected Premium.")
-                        break;
-                    case "4":
-                        Console.WriteLine("Goodbye.");
-                    default:
-                        Console.WriteLine("Invalid input. Please enter a number 1-4.");
-                        break;
+                    Console.WriteLine("Welcome! Please select a plan.");
+                    Console.WriteLine("1. Basic. Cost = $50.00");
+                    Console.WriteLine("2. Plus. Cost = $75.00");
+                    Console.WriteLine("3. Premium. Cost = $100.00");
+                    Console.WriteLine("4. Exit");
+
+
+                    Console.WriteLine("Please make a selection:");
+                    string input = Console.ReadLine();
+
+
+                    switch (input)
+                    {
+                        case "1":
+                            Console.WriteLine("You have selected Basic.");
+                            break;
+                        case "2":
+                            Console.WriteLine("You have selected Plus.");
+                            break;
+                        case "3"
+                            Console.WriteLine("You have selected Premium.")
+                            break;
+                        case "4":
+                            Console.WriteLine("Goodbye.");
+                        default:
+                            Console.WriteLine("Invalid input. Please enter a number 1-4.");
+                            break;
+                    }
+                    Console.WriteLine();
                 }
-                Console.WriteLine();
-            }
+            }       
     }    
-
-
-
-        
+       
     
     static void LoggedIn()
     {
@@ -194,7 +191,6 @@ public class Program
                 case "3":
                     ViewAppointments();
                     break;
-
                 case "q":
                     over = true;
                     Console.WriteLine("Thank you for your time!");
