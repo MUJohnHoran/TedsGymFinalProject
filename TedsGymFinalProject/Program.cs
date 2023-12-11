@@ -1,15 +1,48 @@
-﻿using System.ComponentModel.Design;
+<<<<<<< Updated upstream
+﻿namespace TedsGymFinalProject;
+=======
+﻿using System.ComponentModel;
+using System.ComponentModel.Design;
 using System.Net;
 using System.Numerics;
 using System.Security.Cryptography;
 using TedsGymFinalProject.Model;
+>>>>>>> Stashed changes
 
 internal class Program
 {
     static void Main(string[] args)
     {
-        
+<<<<<<< Updated upstream
+=======
+        Console.WriteLine("Loading...");
+        Begin();
+        Menu();
 
+    }
+
+    static void Begin()
+    {
+        var a1 = new Member()
+        {
+            Password = "4321",
+            Username = "Ted4321",
+            MemberFirstName = "Ted",
+            MemberLastName = "Lawder",
+            PhoneNumber = "642-245-8989",
+            ActiveOrInactive = true
+        };
+
+
+        var a2 = new Member()
+        {
+            Password = "6789",
+            Username = "Tom6789",
+            MemberFirstName = "Tom",
+            MemberLastName = "Wagner",
+            PhoneNumber = "708-770-6657",
+            ActiveOrInactive = true
+        };
 
 
         Membership Premium = new Membership(3, "Premium", 100.00);
@@ -18,62 +51,28 @@ internal class Program
 
 >>>>>>> Stashed changes
         
-    }
 
 
 
-        while (!over)
-        {
-            Console.WriteLine("For: To Login (1), To Create Membership (2), To Quit (Q)");
-            Console.Write("Option:");
-            String Option = Console.ReadLine();
-            switch (Option)
-            {
-                case "1":
-                    LoginMenu();
-                    break;
-                case "2":
-                    SignUpMenu();
-                    break;
-                case "q":
-                    over = true;
-                    Console.WriteLine("Thank you for your time!");
-                    break;
-
-            }
-            static void LoginMenu()
-            {
-
-            }
-
-            static void SignUpMenu()
-            {
-                Console.Write("First Name: ");
-                string memberFirstName = Console.ReadLine();
-                Console.Write("Last Name: ");
-                string memberLastName = Console.ReadLine();
-                Console.Write("Username: ");
-                string username = Console.ReadLine();
-                Console.Write("Password: ");
-                string password = Console.ReadLine();
-                Console.Write("Phone Number: ");
-                string phoneNumber = Console.ReadLine();
 
 
-                var newMember = new Member
-                {
-                    MemberFirstName = memberFirstName,
-                    MemberLastName = memberLastName,
-                    Username = username,
-                    Password = password,
-                    PhoneNumber = phoneNumber,
-                };
-
+<<<<<<< Updated upstream
+=======
                 Console.WriteLine("Choose a Membership Level:");
                 Console.WriteLine($"Basic (1), Plus (2), Premium (3)");
-            }
 
-        }
+                static void MembershipPlan()
+                {
+                    int selectedPlan = 0
+
+                    while ( selectedPlan < 1 || selectedPlan > 3) 
+                    
+                    
+
+                }
+
+
+            }
 >>>>>>> Stashed changes
 
     }
