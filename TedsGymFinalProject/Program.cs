@@ -226,9 +226,9 @@ public class Program
             {
                 Console.WriteLine("Welcome! Please choose an option.");
                 Console.WriteLine("1. Check Total Balance");
-                Console.WriteLine("2. Check late fees")
-                Console.WriteLine("3. Check rewards")
-                Console.WriteLine("4. Check vending credits")
+                    Console.WriteLine("2. Check late fees");
+                    Console.WriteLine("3. Check rewards");
+                Console.WriteLine("4. Check vending credits");
                 Console.WriteLine("5. Exit");
 
                 Console.WriteLine("Enter your choice:");
