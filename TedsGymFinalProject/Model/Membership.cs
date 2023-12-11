@@ -8,22 +8,21 @@ namespace TedsGymFinalProject.Model;
 
 public class Membership
 {
+
     public int MembershipLvl { get; set; }
 
-    public bool Renewal { get; set; }
-
-    public bool IsActive { get; set; }
-
+    public string MembershipName { get; set; }
     public double Cost { get; set; }
 
     
-    public Membership (int membershipLvl, bool isActive, bool renewal, double cost)
+    public Membership (int membershipLvl, string membershipName, double cost)
     {
         this.MembershipLvl = membershipLvl;
-        this.IsActive = isActive;
-        this.Renewal = renewal;
+        this.MembershipName = membershipName;
         this.Cost = cost;
     }
+
+
 
 
 

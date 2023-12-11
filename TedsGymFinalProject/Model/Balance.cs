@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-public class Balance;
-{
+public class Balance
+{ 
 	public Balance()
 	{
 	}	
