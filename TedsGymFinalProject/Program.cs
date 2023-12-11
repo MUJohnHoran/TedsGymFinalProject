@@ -124,13 +124,14 @@ public class Program
 
                         if (int.TryParse(Console.ReadLine(), out selectedPlan))
                         {
-                            if(selectedPlan < 1 || selectedPlan > 3)
-                            {
-                                Console.WriteLine("Invalid input! Please enter a number from 1-3.");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid input! Please enter a valid number.");
+                        if(selectedPlan < 1 || selectedPlan > 3)
+                        {
+                            Console.WriteLine("Invalid input! Please enter a number from 1-3.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Invalid input! Please enter a valid number.");
+                        }
             }
         }
     }
@@ -180,7 +181,7 @@ public class Program
             }
             static void ViewAppointments()
             {
-                 var appointmentList = customerAppointments.Where(o => o.customer.Username == authenticatedCustomer.Username);
+                var appointmentList = customerAppointments.Where(o => o.customer.Username == authenticatedCustomer.Username);
                 if(appointmentList.Count() == 0)
                 {
                     Console.WriteLine("No appointment found.");
