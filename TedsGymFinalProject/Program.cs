@@ -16,6 +16,7 @@ internal class Program
         Membership Plus = new Membership(2, "Plus", 75.00);
         Membership Basic = new Membership(1, "Basic", 50.00);
 
+>>>>>>> Stashed changes
         
     }
 
@@ -73,5 +74,7 @@ internal class Program
             }
 
         }
+>>>>>>> Stashed changes
+
     }
 }
