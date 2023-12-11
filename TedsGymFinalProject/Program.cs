@@ -11,7 +11,7 @@ public class Program
     private static Members members;
     private static Member member;
     private static Member authenticatedMember;
-    private static List<Appointment> appointments;
+    private static List<Scheduling> appointments;
     private static List<MemberAppointment> customerAppointments;
     static void Main(string[] args)
     {
