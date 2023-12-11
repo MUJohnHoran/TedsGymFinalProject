@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,20 +14,21 @@ namespace TedsGymFinalProject.Model
         public Members()
         {
             members = new List<Member>();
+
         }
-      
-    public Member Authenticate(string username, string password)
-    {
+
+        public Member Authenticate(string username, string password)
+        {
             var c = members.Where(o => (o.Username == username) && (o.Password == password));
 
-        if (c.Count() > 0)
-        {
-            return c.First();
-        }
-        else
-        {
-            return null;
+            if (c.Count() > 0)
+            {
+                return c.First();
+            }
+            else
+            {
+                return null;
+            }
         }
     }
-
-}
+    }

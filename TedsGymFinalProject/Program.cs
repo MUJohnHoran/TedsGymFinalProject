@@ -4,14 +4,15 @@ using System.Numerics;
 using System.Security.Cryptography;
 using TedsGymFinalProject.Model;
 
-namespace TedsGymFinalProject.model;
+namespace TedsGymFinalProject.Model;
 
 public class Program
 {
     private static Members members;
     private static Member member;
     private static Member authenticatedMember;
-
+    private static List<Appointment> appointments;
+    private static List<MemberAppointment> customerAppointments;
     static void Main(string[] args)
     {
         Console.WriteLine("Loading...");
@@ -22,7 +23,7 @@ public class Program
 
     static void Begin()
     {
-        var a1 = new Member()
+        var a1 = new Member
         {
             Password = "4321",
             Username = "Ted4321",
@@ -31,7 +32,11 @@ public class Program
             PhoneNumber = "642-245-8989",
             ActiveOrInactive = true
         };
+        
+        members = new Members();
+        members.members.Add(a1);
 
+        appointments = new List<Appointment>();
 
         Membership Premium = new Membership(3, "Premium", 100.00);
         Membership Plus = new Membership(2, "Plus", 75.00);
@@ -135,8 +140,10 @@ public class Program
                     }
                 }
 
+
             }
             MembershipLvl selectedMembershipLvl = (MembershipLvl)selectedPlan;
+
             Console.Write($"You have selected the {selectedMembershipLvl} membership plan.");
         }
     }    
@@ -202,7 +209,7 @@ public class Program
             
             static void ViewAppointments()
             {
-                 var appointmentList = customerAppointments.Where(o => o.customer.Username == authenticatedCustomer.Username);
+                 var appointmentList = memberAppointments.Where(o => o.customer.Username == authenticatedMember.Username);
                 if(appointmentList.Count() == 0)
                 {
                     Console.WriteLine("No appointment found.");
@@ -218,4 +225,5 @@ public class Program
 
         }
     }
+}
 }
