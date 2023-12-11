@@ -69,85 +69,90 @@ public class Program
                     break;
 
             }
-            static void LoginMenu()
-            {
+        }
+        static void LoginMenu()
+        {
 
-                if (authenticatedMember == null)
+            if (authenticatedMember == null)
+            {
+                Console.Write("Enter your username: ");
+                string username = Console.ReadLine();
+                Console.Write("Enter your password");
+                string password = Console.ReadLine();
+                authenticatedMember = members.Authenticate(username, password);
+                if (authenticatedMember != null)
                 {
-                    Console.Write("Enter your username: ");
-                    string username = Console.ReadLine();
-                    Console.Write("Enter your password");
-                    string password = Console.ReadLine();
-                    authenticatedMember = members.Authenticate(username, password);
-                    if (authenticatedMember != null)
+                    Console.WriteLine($"Welcome {authenticatedMember.MemberFirstName}");
+                    LoggedIn();
+                }
+                else
+                {
+                    Console.WriteLine("Invalid username or password");
+                }
+            }
+        }
+
+        static void SignUpMenu()
+        {
+            Console.Write("First Name: ");
+            string memberFirstName = Console.ReadLine();
+            Console.Write("Last Name: ");
+            string memberLastName = Console.ReadLine();
+            Console.Write("Username: ");
+            string username = Console.ReadLine();
+            Console.Write("Password: ");
+            string password = Console.ReadLine();
+            Console.Write("Phone Number: ");
+            string phoneNumber = Console.ReadLine();
+
+
+            var newMember = new Member
+            {
+                MemberFirstName = memberFirstName,
+                MemberLastName = memberLastName,
+                Username = username,
+                Password = password,
+                PhoneNumber = phoneNumber,
+            };
+        }
+
+        static void MembershipPlan()
+        {
+            int selectedPlan = 0;
+
+            while (selectedPlan < 1 || selectedPlan > 3)
+            {
+                Console.WriteLine("Select a membership plan:");
+                Console.WriteLine("1. Basic - $50.00");
+                Console.WriteLine("2. Plus - $75.00");
+                Console.WriteLine("3. Premium - $100.00");
+                Console.WriteLine("Please select a plan by entering a number (1-3)");
+
+                if (int.TryParse(Console.ReadLine(), out selectedPlan))
+                {
+                    if (selectedPlan < 1 || selectedPlan > 3)
                     {
-                        Console.WriteLine($"Welcome {authenticatedMember.MemberFirstName}");
-                        LoggedIn();
+                        Console.WriteLine("Invalid input! Please enter a number from 1-3.");
                     }
                     else
                     {
-                        Console.WriteLine("Invalid username or password");
+                        Console.WriteLine("Invalid input! Please enter a valid number.");
                     }
                 }
+
+
             }
+            MembershipLvl selectedMembershipLvl = (MembershipLvl)selectedPlan;
 
-            static void SignUpMenu()
-            {
-                Console.Write("First Name: ");
-                string memberFirstName = Console.ReadLine();
-                Console.Write("Last Name: ");
-                string memberLastName = Console.ReadLine();
-                Console.Write("Username: ");
-                string username = Console.ReadLine();
-                Console.Write("Password: ");
-                string password = Console.ReadLine();
-                Console.Write("Phone Number: ");
-                string phoneNumber = Console.ReadLine();
-
-
-                var newMember = new Member
-                {
-                    MemberFirstName = memberFirstName,
-                    MemberLastName = memberLastName,
-                    Username = username,
-                    Password = password,
-                    PhoneNumber = phoneNumber,
-                };               
-            }
-
-            static void MembershipPlan()
-            {
-                int selectedPlan = 0;
-
-                while (selectedPlan < 1 || selectedPlan > 3)
-                {
-                    Console.WriteLine("Select a membership plan:");
-                    Console.WriteLine("1. Basic - $50.00");
-                    Console.WriteLine("2. Plus - $75.00");
-                    Console.WriteLine("3. Premium - $100.00");
-                    Console.WriteLine("Please select a plan by entering a number (1-3)");
-
-                        if (int.TryParse(Console.ReadLine(), out selectedPlan))
-                        {
-                            if(selectedPlan < 1 || selectedPlan > 3)
-                            {
-                                Console.WriteLine("Invalid input! Please enter a number from 1-3.");
-                            }
-                            else
-                            {
-                                Console.WriteLine("Invalid input! Please enter a valid number.");
-            }
-        }
-    }
-
-            membershipLvl selectedMembershipLvl = (membershipLvl)selectedPlan;
             Console.Write($"You have selected the {selectedMembershipLvl} membership plan.");
+        }
+    }    
 }
 
 
 
-        }
-    }
+        
+    
     static void LoggedIn()
     {
         bool over = false;
@@ -175,14 +180,33 @@ public class Program
                     break;
 
             }
-            static void AppointmentSignUp()
+            static void ScheduleAppointment()
             {
+                Console.WriteLine("Available activities: Yoga, Swim, Cycling, Weight Training, Basketball, and Tennis.");
+
+                Console.Write("Please enter the type of activity:");
+                string activityType = Console.ReadLine();
+
+                Console.Write("Enter the day of the week:");
+                string dayofWeek = Console.ReadLine();
+
+                Console.WriteLine("Enter what time:");
+                string time = Console.ReadLine();
+
+                Scheduling yourSchedule = new Scheduling(activityType, dayofWeek, time);
+
+                Console.WriteLine("/nSign-up Details:");
+                Console.WriteLine("Class type: " + yourSchedule.ActivityType);
+                Console.WriteLine("Day of the week: " + yourSchedule.DayOfWeek);
+                Console.WriteLine("Time: " + yourSchedule.Time);
 
             }
+            
             static void CheckBalance()
             {
 
             }
+            
             static void ViewAppointments()
             {
                  var appointmentList = memberAppointments.Where(o => o.customer.Username == authenticatedMember.Username);
