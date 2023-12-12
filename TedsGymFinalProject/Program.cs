@@ -130,7 +130,7 @@ public class Program
                     MembershipLvl = 2,
                     MembershipName = Plus,
                     Cost = 75.00
-                }
+                };
 
 
             bool exit = false;
@@ -155,8 +155,8 @@ public class Program
                         case "2":
                             Console.WriteLine("You have selected Plus.");
                             break;
-                        case "3"
-                            Console.WriteLine("You have selected Premium.")
+                        case "3":
+                            Console.WriteLine("You have selected Premium.");
                             break;
                         case "4":
                             Console.WriteLine("Goodbye.");
@@ -166,7 +166,8 @@ public class Program
                     }
                     Console.WriteLine();
                 }
-            }       
+            }
+        }
     }    
        
     static void LoggedIn()
@@ -247,7 +248,7 @@ public class Program
                             Console.WriteLine($"Your total balance is: {userBalance.TotalBalance:C}");
                             break;
                         case "2":
-                            Console.WriteLine($"You have {userBalance.LateFees:C} in late fees.")
+                            Console.WriteLine($"You have {userBalance.LateFees:C} in late fees.");
                             break;
                         case "3":
                             Console.WriteLine($"You have {userBalance.Rewards:C} in rewards.");
@@ -259,7 +260,7 @@ public class Program
                             Console.WriteLine("Exiting...");
                             break;
                         default:
-                            Console.WriteLine("Invalid option. Please enter either 1 or 2.");
+                            Console.WriteLine("Invalid option. Please enter a number 1-5.");
                             break;
                     }
                     Console.WriteLine();
