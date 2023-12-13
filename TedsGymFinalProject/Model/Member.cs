@@ -6,32 +6,36 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace TedsGymFinalProject.Model;
-public class Member
+public class Member//creates member class to create members
 {
+    public int ID { get; set; }  //creates variable for ID
+    public string Password { get; set; } //creates variable for Password
+    public string Username { get; set; } //creates variable for Username
+    public static int IDGenerator; //creates variable for IDGenerator
+    public string MemberFirstName { get; set; } //creates variable for MemberFirstName
+    public string MemberLastName { get; set; } //creates variable for MemberLastName
+    public string PhoneNumber { get; set; } //creates variable for PhoneNumber
+    public bool ActiveOrInactive { get; set; } //creates variable for ActiveOrInactive
+    public Membership membership { get; set; } //creates variable for membership that is a object in the Membership class with its own attributes
 
-    public string MemberFirstName { get; set; }
-    public string MemberLastName { get; set; }
-    public string PhoneNumber { get; set; }
-    public string Address { get; set; }
-    public bool ActiveOrInactive { get; set; }
-    public Membership Membership { get; set; }
+    public string MembershipPlan { get; set; } //creates variable for MembershipPlan
 
 
 
-    public Member(string memberFirtName, string memberLastName, string phoneNumber, string address, bool activeOrInactive, Membership membership)
+
+
+    public Member()//constructor to construct number
     {
-        this.MemberFirstName = memberFirtName;
-        this.MemberLastName = memberLastName;
-        this.PhoneNumber = phoneNumber;
-        this.Address = address;
-        this.ActiveOrInactive = activeOrInactive;
-        this.Membership = membership;
+        IDGenerator++;//increases this variable by 1 every time it is used
+        ID = IDGenerator;//associates this increased variable to the ID
     }
+
+
 }
-    
-   
-    
-   
+
+
+
+
 
 
 
