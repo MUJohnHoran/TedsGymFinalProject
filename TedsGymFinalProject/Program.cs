@@ -79,11 +79,11 @@ public class Program
     {
         bool over = false; // Sets the variable over to false to set loop condition
 
-        while (!over) // While causes the loop to run while “over” is false
+        while (!over) // While causes the loop to run while ï¿½overï¿½ is false
         {
             Console.WriteLine("For: To Login (1), To Create Membership (2), To clear screen (c), To Quit (q)"); // Gives the user options to enter to navigate the program
             Console.Write("Option:");
-            String Option = Console.ReadLine(); // Displays “Option:” and stores input in Option
+            String Option = Console.ReadLine(); // Displays ï¿½Option:ï¿½ and stores input in Option
             switch (Option) // Switch evaluates the input and executes that case
             {
                 case "1": // Case that takes the user to the login menu by running log in method
@@ -108,7 +108,7 @@ public class Program
     static void LoginMenu() //Method for logging into the program
     {
 
-        if (authenticatedMember == null) //Checks if authenticated member is null, if so loop doesn’t run
+        if (authenticatedMember == null) //Checks if authenticated member is null, if so loop doesnï¿½t run
         {
             Console.Write("Enter your username: ");  // Asks user to enter username
             string username = Console.ReadLine();  // Stores input as username
@@ -131,7 +131,7 @@ public class Program
     static void SignUpMenu() //Method to sign up as a new member
     {
         Console.Write("First Name: ");  // Prompts user to enter their information
-        string memberFirstName = Console.ReadLine();  // Stores the user’s input as variable
+        string memberFirstName = Console.ReadLine();  // Stores the userï¿½s input as variable
         Console.Write("Last Name: ");
         string memberLastName = Console.ReadLine();
         Console.Write("Username: ");
@@ -153,7 +153,6 @@ public class Program
             PhoneNumber = phoneNumber,
             MembershipPlan = membership,
 
-
         };
 
         members.members.Add(newMember); // Adds the entered information into the members list
@@ -172,7 +171,7 @@ public class Program
         {
             Console.WriteLine("For: Appointment Sign Up (1), To Check Balance (2), View Current Appointments (3), To Quit (q)");  // Displays options for the logged in user
             Console.Write("Option:");  // Asks user to choose an option
-            String Option = Console.ReadLine();  // Stores user input in “Option”
+            String Option = Console.ReadLine();  // Stores user input in ï¿½Optionï¿½
             switch (Option)  // Switch runs case depending on what option was chosen
             {
                 case "1":  // Case for Scheduling appoinment
@@ -187,7 +186,7 @@ public class Program
 
                 case "q":
                     authenticatedMember = null;
-                    over = true;  // Case for quitting menu, breaks loop by setting “over” to true
+                    over = true;  // Case for quitting menu, breaks loop by setting ï¿½overï¿½ to true
                     break;
 
             }
@@ -224,7 +223,7 @@ public class Program
                     Vending = 0,
                 };
 
-                bool exit = false;  // sets “exit” to false
+                bool exit = false;  // sets ï¿½exitï¿½ to false
 
                 while (!exit)  // While loop runs as long as exit is false
                 {
@@ -238,7 +237,7 @@ public class Program
                     Console.WriteLine("5. Exit");  // option to exit
 
                     Console.WriteLine("Enter your choice:");  // Asks user for choice
-                    string input = Console.ReadLine();  // stores input as “input”
+                    string input = Console.ReadLine();  // stores input as ï¿½inputï¿½
 
                     switch (input)  // Runs case depending on input
                     {
@@ -258,19 +257,17 @@ public class Program
                             Console.WriteLine("Exiting...");
                             exit = true;  // Exits menu and ends the loop
                             break;
-                        default:  // Runs if user input is invalid; doesn’t match case options
+                        default:  // Runs if user input is invalid; doesnï¿½t match case options
                             Console.WriteLine("Invalid option. Please enter either 1 or 2.");
                             break;
                     }
                     Console.WriteLine();  // Leaves a space
                 }
-
+              
             }
 
             static void ViewAppointments()//Creates Method for option to view appointments
-            {
-
-
+              }
                 if (authenticatedMember == null)//if the value for authenticated member is null return the following...
                 {
                     Console.WriteLine("You are not logged in.");// write this on the screen
@@ -281,16 +278,13 @@ public class Program
 
                 if (appointmentList.Count() == 0)//If appointment count is equal to 0...
                 {
-                    Console.WriteLine("No appointment found.");//write on screen “no appointment found”
+                    Console.WriteLine("No appointment found.");//write on screen ï¿½no appointment foundï¿½
                 }
                 else
                 {
                     Console.WriteLine($"You have an appointment at see you there!");//If it does not = 0 found write this on the screen
                 }
-
             }
         }
     }
 }
-
-
