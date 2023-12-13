@@ -164,50 +164,6 @@ public class Program
 
     }
 
-    static void MembershipPlan() // Method for choosing a plan
-    {
-
-        bool exit = false; // Sets exit variable to false to set loop condition
-
-        while (!exit) // Loop will continue executing while exit is false.
-        {
-            Console.WriteLine("Welcome! Please select a plan.");  // Prompts user to select plan. 
-            Console.WriteLine("1. Basic. Cost = $50.00");  // Displays options to user.
-            Console.WriteLine("2. Plus. Cost = $75.00");
-            Console.WriteLine("3. Premium. Cost = $100.00");
-            Console.WriteLine("4. Exit");  // Option to exit the menu
-
-
-            Console.WriteLine("Please make a selection:");  // Prompts user to make a choice.
-            string input = Console.ReadLine();  // Takes the users input and stores it in “input”
-
-
-            switch (input)  // Evaluates the user’s input.
-            {
-                case "1":  // Case 1 corresponds to Basic
-                    exit = true;
-                    Console.WriteLine("You have selected Basic.");
-                    break;  // The breaks after each case break the loop. 
-                case "2":  // Case 2 corresponds to Plus
-                    exit = true;
-                    Console.WriteLine("You have selected Plus.");
-                    break;
-                case "3":  // Case 3 corresponds to Premium.
-                    exit = true;
-                    Console.WriteLine("You have selected Premium.");
-                    break;
-                case "4":  // Case 4 corresponds to exit
-                    exit = true;
-                    Console.WriteLine("Exit.");
-                    break;
-                default:  // If user does not enter number 1-4, displays invlaid. 
-                    Console.WriteLine("Invalid input. Please enter a number 1-4.");
-                    break;
-            }
-        }
-    }
-
-
     static void LoggedIn()  // Method for when user is logged in successfully
     {
         bool over = false;  // Sets the over variable to false
